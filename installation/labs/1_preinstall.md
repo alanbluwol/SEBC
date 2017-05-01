@@ -140,6 +140,7 @@ service nscd status
 
 Output
 
+```sh
 [root@ip-172-31-1-85 ~]# service nscd status
 Redirecting to /bin/systemctl status  nscd.service
 ● nscd.service - Name Service Cache Daemon
@@ -260,10 +261,10 @@ Output
 [root@ip-172-31-1-85 ~]# getent hosts
 127.0.0.1       localhost localhost.localdomain localhost4 localhost4.localdomain4
 127.0.0.1       localhost localhost.localdomain localhost6 localhost6.localdomain6
-172.31.5.116    node1.alanbluwol node1 master1 ip-172-31-1-226
-172.31.7.189    node2.alanbluwol node2 worker1 ip-172-31-6-72
-172.31.13.46    node3.alanbluwol node3 worker2 ip-172-31-10-115
-172.31.15.253    node4.alanbluwol node4 worker3 ip-172-31-15-253
+172.31.5.116    node1.alanbluwol node1 master1 ip-172-31-5-116
+172.31.7.189    node2.alanbluwol node2 worker1 ip-172-31-7-189
+172.31.13.46    node3.alanbluwol node3 worker2 ip-172-31-13-46
+172.31.15.253   node4.alanbluwol node4 worker3 ip-172-31-15-253
 ```
 
 ### Security-Enhanced Linux Disabled
@@ -271,7 +272,7 @@ Output
 Script
 
 ```sh
-sed -i 's/enabled/disabled/g' /etc/selinux/config
+sed -i 's/enforcing/disabled/g' /etc/selinux/config
 setenforce 0
 getenforce
 
@@ -291,7 +292,7 @@ Permissive
 /#     enforcing - SELinux security policy is enforced.
 /#     permissive - SELinux prints warnings instead of enforcing.
 /#     disabled - No SELinux policy is loaded.
-SELINUX=enforcing
+SELINUX=disabled
 /# SELINUXTYPE= can take one of three two values:
 /#     targeted - Targeted processes are protected,
 /#     minimum - Modification of targeted policy. Only selected processes are protected. 
