@@ -1,6 +1,6 @@
 # Services Enablement Boot Camp
 
-# Lab 1: CDH Install
+# Lab 1: Preinstall
 
 ## 0 - Instantiate Hosts
 
