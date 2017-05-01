@@ -5,6 +5,8 @@
 ### Host Configuration
 
 Script
+
+```sh
 getent hosts
 ```
 
