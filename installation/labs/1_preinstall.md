@@ -603,7 +603,12 @@ MariaDB [(none)]> show variables like 'binlog_format';
 1 row in set (0.01 sec)
 
 MariaDB [(none)]> SHOW MASTER STATUS \G
-Empty set (0.01 sec)
+*************************** 1. row ***************************
+            File: mysqld-bin.000001
+        Position: 47150008
+    Binlog_Do_DB: 
+Binlog_Ignore_DB: 
+1 row in set (0.00 sec)
 
 MariaDB [(none)]> create database scm; -- Cloudera Manager
 Query OK, 1 row affected (0.00 sec)
