@@ -53,7 +53,7 @@ Refer to PNG images uploaded
 Script
 
 ```sh
-hdfs dfs -rm -R /precious
+hdfs dfs -rm -R /precious/SEBC-Sydney.zip
 hdfs dfs -ls /
 rm -rf /tmp/SEBC-Sydney.zip
 ls /tmp/SEBC*
