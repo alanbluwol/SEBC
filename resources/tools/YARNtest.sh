@@ -8,19 +8,26 @@ HADOOP=/opt/cloudera/parcels/CDH/bin
 echo Testing loop started on `date`
 
 # Mapper containers
-for i in 8    
+for i in 4    
 do
+   echo Number of Mappers: ${i}
    # Reducer containers
    for j in 1 
    do                 
+      echo Number of Containers: ${j}
       # Container memory
       for k in 512 1024 
-      do                         
+      do           
+                       
          # Set mapper JVM heap 
          MAP_MB=`echo "($k*0.8)/1" | bc` 
 
          # Set reducer JVM heap 
          RED_MB=`echo "($k*0.8)/1" | bc` 
+	
+         echo Container Memory: ${k}
+         echo Mapper JVM heap: ${MAP_MB}
+         echo Reducer JVM heap: ${RED_MB}
 
         time ${HADOOP}/hadoop jar ${MR}/hadoop-examples.jar teragen \
                      -Dmapreduce.job.maps=$i \
@@ -38,8 +45,8 @@ do
 	             /results/tg-10GB-${i}-${j}-${k}  \
                      /results/ts-10GB-${i}-${j}-${k} 1>>tera_${i}_${j}_${k}.out 2>>tera_${i}_${j}_${k}.err                         
 
-        $HADOOP/hadoop fs -rm -r -skipTrash /results/tg-10GB-${i}-${j}-${k}                         
-        $HADOOP/hadoop fs -rm -r -skipTrash /results/ts-10GB-${i}-${j}-${k}                 
+        $HADOOP/hdfs dfs -rm -r -skipTrash /results/tg-10GB-${i}-${j}-${k}                         
+        $HADOOP/hdfs dfs -rm -r -skipTrash /results/ts-10GB-${i}-${j}-${k}                 
       done
    done
 done
