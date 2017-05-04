@@ -535,3 +535,47 @@ Password for alanbluwol@CLOUDERA.COM:
 Found 1 items
 drwx------   - alanbluwol supergroup          0 2017-05-01 22:20 /user/alanbluwol/.staging
 ```
+
+### Final Checks
+
+```sh
+kadmin.local
+getprincs
+```
+
+Output
+
+```sh
+[root@manager ~]# kadmin.local
+Authenticating as principal root/admin@CLOUDERA.COM with password.
+kadmin.local:  getprincs
+HTTP/node1.alanbluwol@CLOUDERA.COM
+HTTP/node2.alanbluwol@CLOUDERA.COM
+HTTP/node3.alanbluwol@CLOUDERA.COM
+HTTP/node4.alanbluwol@CLOUDERA.COM
+K/M@CLOUDERA.COM
+alanbluwol@CLOUDERA.COM
+cloudera-scm@CLOUDERA.COM
+hdfs/node1.alanbluwol@CLOUDERA.COM
+hdfs/node2.alanbluwol@CLOUDERA.COM
+hdfs/node3.alanbluwol@CLOUDERA.COM
+hdfs/node4.alanbluwol@CLOUDERA.COM
+hdfs@CLOUDERA.COM
+hive/node1.alanbluwol@CLOUDERA.COM
+httpfs/node1.alanbluwol@CLOUDERA.COM
+hue/node1.alanbluwol@CLOUDERA.COM
+kadmin/admin@CLOUDERA.COM
+kadmin/changepw@CLOUDERA.COM
+kadmin/manager.alanbluwol@CLOUDERA.COM
+kiprop/manager.alanbluwol@CLOUDERA.COM
+krbtgt/CLOUDERA.COM@CLOUDERA.COM
+mapred/node1.alanbluwol@CLOUDERA.COM
+oozie/node1.alanbluwol@CLOUDERA.COM
+yarn/node1.alanbluwol@CLOUDERA.COM
+yarn/node2.alanbluwol@CLOUDERA.COM
+yarn/node3.alanbluwol@CLOUDERA.COM
+yarn/node4.alanbluwol@CLOUDERA.COM
+zookeeper/node1.alanbluwol@CLOUDERA.COM
+zookeeper/node2.alanbluwol@CLOUDERA.COM
+zookeeper/node3.alanbluwol@CLOUDERA.COM
+```
