@@ -1,3 +1,9 @@
+# Services Enablement Boot Camp
+
+# 2 - Cloudera Manager Repo
+
+* Output Cloudera Manager Repo
+
 ```sh
 [root@ip-172-31-2-184 ~]# vi /etc/yum.repos.d/cloudera-manager.repo
 [cloudera-manager]
